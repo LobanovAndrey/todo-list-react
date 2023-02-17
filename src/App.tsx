@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  AdaptivityProvider,
+  AppRoot, ConfigProvider,
+} from '@vkontakte/vkui';
+import '@vkontakte/vkui/dist/vkui.css';
+import { HOME_PAGE_URL, LOGIN_PAGE_URL, SINGUP_PAGE_URL } from 'pages/Pages.consts';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {HomePage, homePageLoader} from './pages/HomePage';
+import { LoginPage, loginPageLoader } from './pages/LoginPage';
+import { RegisterPage } from './pages/RegisterPage';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: HOME_PAGE_URL,
+    element: <HomePage />,
+    loader: homePageLoader,
+  },
+  {  
+    path: LOGIN_PAGE_URL,
+    element: <LoginPage />,
+    loader: loginPageLoader,
+  },
+  {
+    path: SINGUP_PAGE_URL,
+    element: <RegisterPage />,
+  },
+]);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider>
+      <AdaptivityProvider>
+        <AppRoot>
+          <RouterProvider router={router} />
+        </AppRoot>
+      </AdaptivityProvider>
+    </ConfigProvider>
   );
-}
+};
 
 export default App;

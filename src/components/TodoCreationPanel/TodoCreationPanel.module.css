@@ -1,0 +1,25 @@
+
+
+.cellContainer {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5%
+}
+
+.formItem {
+  padding: 0px !important;
+  padding-top: 0px !important;
+}
+
+.descriptionBar {
+  width: 100%;
+}
