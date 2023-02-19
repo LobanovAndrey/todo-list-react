@@ -28,7 +28,6 @@ import { ReactComponent as GitHubLogo } from "icons/github-icon.svg";
 import { LOGIN_PAGE_URL, SINGUP_PAGE_URL } from "pages/Pages.consts";
 import { useAppSelector } from "hooks/redux-hooks";
 import { parceAuthFormError } from "./AuthForm.helpers";
-import { useDispatch } from 'react-redux';
 
 interface AuthFormProps {
   formType: AuthFormType;

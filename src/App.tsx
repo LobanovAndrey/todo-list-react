@@ -5,7 +5,7 @@ import {
   LOGIN_PAGE_URL,
   SINGUP_PAGE_URL,
 } from "pages/Pages.consts";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
 import { HomePage, homePageLoader } from "./pages/HomePage";
 import { LoginPage, loginPageLoader } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
@@ -17,14 +17,18 @@ const router = createBrowserRouter([
     loader: homePageLoader,
   },
   {
-    path: LOGIN_PAGE_URL,
+    path: '/login',
     element: <LoginPage />,
     loader: loginPageLoader,
   },
   {
-    path: SINGUP_PAGE_URL,
+    path: '/register',
     element: <RegisterPage />,
   },
+  {
+    path: '*',
+    loader: () => redirect('/'),
+  }
 ]);
 
 const App = () => {
