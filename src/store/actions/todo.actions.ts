@@ -30,7 +30,6 @@ export const fetchTodos = createAsyncThunk(
         child(ref(database), `/${userUid}/${TODOS_PATH}`)
       );
       if (snapshot.exists()) {
-        console.log("FETCH TODOS", snapshot.val());
         return snapshot.val();
       } else {
         console.log("Not existing TODO data");
