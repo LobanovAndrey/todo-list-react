@@ -23,11 +23,9 @@ export const LoginPage = () => {
 
   const handleAuth = useCallback(
     (userCredential: Promise<UserCredential>) => {
-
       dispatch(setAuthPending());
       userCredential
         .then(({ user }) => {
-          console.log(user);
           dispatch(
             setUser({
               email: user.email ||  user.displayName || "Anonymous",
