@@ -13,8 +13,3 @@
 - Firebase for authorization and firebase realtime database for saving the state of all users
 - React-transition-group for animation
 
-## To do:
-- Improve animation when deleting/adding - fixed sudden jumps
-- Added Validation for edit todo
-- Improve login with Firebase - expand the number of providers
-- Finalize ToDo list UI - Improve editing
