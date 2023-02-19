@@ -1,3 +1,7 @@
+:root {
+  -vkui--color_write_bar_input_background: white !important;
+}
+
 .buttonGroup {
   margin: 0 10px,
 }
@@ -22,6 +26,7 @@
   border-radius: 6px;
   font-size: 16px;
   font-weight: normal;
+  background-color: white;
 }
 
 .activeFieldBackground {
