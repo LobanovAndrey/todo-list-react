@@ -1,5 +1,7 @@
 # Todo List v1.0
 
+### Try it https://lobanovandrey.github.io/todo-list-react/
+
 ## Basic functionality:
 1) Login/Sing up/Log out with saving status authorization of users
 2) Saving state for each user's to-do list
@@ -12,4 +14,3 @@
 - React router dov v.6.8 - using new feature loaders for redirect before render
 - Firebase for authorization and firebase realtime database for saving the state of all users
 - React-transition-group for animation
-
