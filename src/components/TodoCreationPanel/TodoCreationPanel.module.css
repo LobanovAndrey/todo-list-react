@@ -3,23 +3,23 @@
 .cellContainer {
   display: flex;
   flex-direction: column;
-  padding-right: 10px;
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .fieldContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 5%
+  gap: 3%
 }
 
 .formItem {
-  padding: 0px !important;
-  padding-top: 0px !important;
+  padding: 2px 5px 2px !important;
+  margin-left: 0 !important;
 }
 
-.descriptionBar {
+.descriptionField {
   width: 100%;
+  margin-bottom: 10px;
 }

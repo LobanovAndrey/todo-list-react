@@ -1,0 +1,24 @@
+/* .todo-edit-enter{
+  opacity: 0;
+  transform: translateX(300px);
+}
+
+.todo-edit-exit{
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.todo-edit-enter-active{
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.todo-edit-exit-active{
+  opacity: 0;
+  transform: translateY(-300px);
+  /* transform: translateX(100%); */
+/* }
+
+.todo-edit-enter-active,
+.todo-edit-exit-active{
+  /* transition: opacity 1000ms, transform 1500ms; */

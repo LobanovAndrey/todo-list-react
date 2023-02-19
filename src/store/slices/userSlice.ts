@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { IUser } from 'entities/IUser';
-import { removeUser, setUser } from 'store/actions/user.actions';
-import { USER_PATH } from 'store/consts';
+import { createSlice } from "@reduxjs/toolkit";
+import { IUser } from "entities/IUser";
+import { removeUser, setUser } from "store/actions/user.actions";
+import { USER_PATH } from "store/consts";
 
 export const initialUserState: IUser = {
   email: null,
@@ -14,53 +14,62 @@ const userSlice = createSlice({
   initialState: {
     data: initialUserState,
     loading: false,
-    error: '',
+    error: "",
   },
   reducers: {
-    toogleUserLoading (state) {
-      state.loading = !state.loading;
+    resetAuthStatus(state) {
+      state.error = "";
+      state.loading = false;
     },
-    setUserInStore (state, action) {
-      console.log('USER SET IN STORE', action.payload);
+    setAuthError(state, action) {
+      state.error = action.payload;
+      state.loading = false;
+    },
+    setAuthPending(state) {
+      state.loading = true;
+      state.error = "";
+    },
+    setUserInStore(state, action) {
       state.data = action.payload;
     },
   },
   extraReducers: (builder) => {
     // SET USER
     builder.addCase(setUser.pending, (state) => {
-      console.log('USER SET PENDEING');
       state.loading = true;
     });
     builder.addCase(setUser.fulfilled, (state, action) => {
-      console.log('USER SET FULLFILLED', action.payload);
       state.loading = false;
       state.data = action.payload;
-      state.error = '';
+      state.error = "";
     });
     builder.addCase(setUser.rejected, (state, action) => {
       state.loading = false;
       state.data = initialUserState;
-      state.error = action.error.message ?? 'Something went wrong';
+      state.error = action.error.message ?? "Error! Cant set user";
     });
 
     // REMOVE USER
     builder.addCase(removeUser.pending, (state) => {
-      console.log('USER REMOVE PENDING');
       state.loading = true;
     });
     builder.addCase(removeUser.fulfilled, (state) => {
-      console.log('USER REMOVE FULLFILLED');
       state.loading = false;
       state.data = initialUserState;
-      state.error = '';
+      state.error = "";
     });
     builder.addCase(removeUser.rejected, (state, action) => {
       state.loading = false;
       state.data = initialUserState;
-      state.error = action.error.message ?? 'Something went wrong';
+      state.error = action.error.message ?? "Error! Cant remove user";
     });
   },
-})
+});
 
-export const { setUserInStore, toogleUserLoading } = userSlice.actions;
+export const {
+  setUserInStore,
+  setAuthPending,
+  resetAuthStatus,
+  setAuthError,
+} = userSlice.actions;
 export default userSlice.reducer;

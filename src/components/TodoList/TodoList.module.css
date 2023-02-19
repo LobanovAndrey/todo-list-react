@@ -1,4 +1,9 @@
 .container {
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
+  min-height: 650px;
+}
+
+.animateItem {
+  /* transition: all 1000ms ease-in; */
 }

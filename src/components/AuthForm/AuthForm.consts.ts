@@ -1,25 +1,35 @@
 export const signInMessages = {
-  header: 'Sign In',
-  submitButton: 'Sign In',
-  secondaryButton: 'Registration',
+  header: "Welcome back",
+  submitButton: "Sign In",
+  secondaryButton: "Sing Up",
+  separatorText: "OR",
+  loginWithGoogle: "Login with Google",
+  loginWithGitGub: "Login with GitHub",
+  secondaryButtonText: "Don't have an account?",
 } as const;
 
 export const signUpMessages = {
-  header: 'Sign Up',
-  submitButton: 'Sign Up',
-  secondaryButton: 'Sign In',
+  header: "Create your account",
+  submitButton: "Sign Up",
+  secondaryButton: "Sign In",
+  secondaryButtonText: "You already have an account?"
 } as const;
 
 export const validationMessages = {
-  incorrectEmail: 'Incorrect email',
-  invalidPassword: 'Invalid password',
-  emptyEmail: 'Email cannot be empty',
-  emptyPassword: 'Password cannot be empty',
+  invalidEmail: "The email address is invalid",
+  emptyEmail: "The email address cannot be empty",
+  emailAlreadyExists: "The user already exists",
+  emailNotFound: "Email address not found",
+  emptyPassword: "Password cannot be empty",
+  invalidPassword:
+    "Passwords must be at least 6 characters and a number",
+  wrongPassword: "Wrong password",
 } as const;
 
 export const placeholders = {
-  emailTop: 'Email',
-  passwordTop: 'Password',
-  emailInput: 'Enter email',
-  passwordInput: 'Enter password',
+  emailTop: "Email",
+  passwordTop: "Password",
+  emailInput: "Enter email",
+  passwordInput: "Enter password",
 } as const;
+

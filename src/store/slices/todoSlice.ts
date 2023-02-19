@@ -14,11 +14,9 @@ const todoSlice = createSlice({
   extraReducers: (builder) => {
     // FETCH TODOS
     builder.addCase(fetchTodos.pending, (state) => {
-      console.log("FETCH TODO PENDING");
       state.loading = true;
     });
     builder.addCase(fetchTodos.fulfilled, (state, action) => {
-      console.log("FETCH TODO FULLFILLED", action.payload);
       state.loading = false;
       state.data = action.payload ? Object.values(action.payload) : [];
       state.error = '';
@@ -30,11 +28,9 @@ const todoSlice = createSlice({
 
     // ADD TODO
     builder.addCase(addTodo.pending, (state) => {
-      console.log("ADD TODO PENDING");
       state.loading = true;
     });
     builder.addCase(addTodo.fulfilled, (state, action) => {
-      console.log("ADD TODO FULLFILLED", action.payload);
       state.loading = false;
       state.error = '';
       state.data.push(action.payload);
@@ -46,11 +42,9 @@ const todoSlice = createSlice({
 
     // UPDATE TODO
     builder.addCase(updateTodo.pending, (state) => {
-      console.log("UPDATE TODO PENDING");
       state.loading = true;
     });
     builder.addCase(updateTodo.fulfilled, (state, action) => {
-      console.log("UPDATE TODO FULLFILLED", action.payload);
       state.loading = false;
       state.error = '';
       const item = state.data.find(todo => todo.id === action.payload.id);
@@ -67,11 +61,9 @@ const todoSlice = createSlice({
 
     // REMOVE TODO
     builder.addCase(removeTodo.pending, (state) => {
-      console.log("REMOVE TODO");
       state.loading = true;
     });
     builder.addCase(removeTodo.fulfilled, (state, action) => {
-      console.log("REMOVE TODO FULLFILLED", action.payload);
       state.loading = false;
       state.data = state.data.filter(todo => todo.id !== action.payload);
       state.error = '';

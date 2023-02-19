@@ -1,6 +1,6 @@
 import { getDatabase } from "firebase/database";
 import { GoogleAuthProvider, GithubAuthProvider, getAuth } from "firebase/auth";
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -21,6 +21,6 @@ const authProviders = {
 };
 
 const auth = getAuth(app);
-auth.languageCode = 'it';
+auth.languageCode = "it";
 
 export { auth, authProviders, database };

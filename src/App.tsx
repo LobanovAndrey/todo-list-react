@@ -1,13 +1,14 @@
+import { AdaptivityProvider, AppRoot, ConfigProvider } from "@vkontakte/vkui";
+import "@vkontakte/vkui/dist/vkui.css";
 import {
-  AdaptivityProvider,
-  AppRoot, ConfigProvider,
-} from '@vkontakte/vkui';
-import '@vkontakte/vkui/dist/vkui.css';
-import { HOME_PAGE_URL, LOGIN_PAGE_URL, SINGUP_PAGE_URL } from 'pages/Pages.consts';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import {HomePage, homePageLoader} from './pages/HomePage';
-import { LoginPage, loginPageLoader } from './pages/LoginPage';
-import { RegisterPage } from './pages/RegisterPage';
+  HOME_PAGE_URL,
+  LOGIN_PAGE_URL,
+  SINGUP_PAGE_URL,
+} from "pages/Pages.consts";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HomePage, homePageLoader } from "./pages/HomePage";
+import { LoginPage, loginPageLoader } from "./pages/LoginPage";
+import { RegisterPage } from "./pages/RegisterPage";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     element: <HomePage />,
     loader: homePageLoader,
   },
-  {  
+  {
     path: LOGIN_PAGE_URL,
     element: <LoginPage />,
     loader: loginPageLoader,

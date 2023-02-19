@@ -1,6 +1,7 @@
 .container {
-  padding: 15px 5px;
-  min-width: 500px;
+  box-sizing: border-box;
+  margin: 10px 10px 15px;
+  width: 420px
 }
 
 .footer {
@@ -9,7 +10,7 @@
 }
 
 .submitButton {
-  min-width: 150px;
+  max-width: 40%;
 }
 
 .formItem {
@@ -17,8 +18,47 @@
   padding-top: 0 !important;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 476px) {
   .container {
-    min-width: 350px;
+    max-width: 350px;
   }
+}
+
+.loginOrSeparator {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+  padding: 20px 0 0;
+}
+
+.loginOrText {
+  text-align: center;
+  flex: 0.2 0 auto;
+  margin: 0;
+}
+
+.loginOrSeparator::before {
+  content: "";
+  border-bottom: 1px solid #c2c8d0;
+  flex: 1 0 auto;
+  height: 0.5em;
+  margin-top: 2px;
+}
+
+.loginOrSeparator::after {
+  content: "";
+  border-bottom: 1px solid #c2c8d0;
+  flex: 1 0 auto;
+  height: 0.5em;
+  margin-top: 2px;
+}
+
+.singUpText {
+  font-size: 14px;
+  font-weight: normal;
 }

@@ -6,8 +6,8 @@ export const validateEmail = (email: string) => {
     );
 };
 
-// only spaces
 export const validatePassword = (password: string) => {
-  return !String(password).match(/^(?=.*\s)/);
-    //.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
-}
+  return String(password).match(
+    /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+){6,16}$/
+  );
+};
