@@ -33,7 +33,7 @@ const todoSlice = createSlice({
     builder.addCase(addTodo.fulfilled, (state, action) => {
       state.loading = false;
       state.error = '';
-      state.data.push(action.payload);
+      state.data.unshift(action.payload);
     });
     builder.addCase(addTodo.rejected, (state, action) => {
       state.loading = false;

@@ -3,15 +3,7 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-}
-
-.headerContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: 'space-between';
-  gap: 5%;
+  max-width: 650px;
 }
 
 .title {

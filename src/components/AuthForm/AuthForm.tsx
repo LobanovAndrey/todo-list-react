@@ -29,7 +29,6 @@ import { LOGIN_PAGE_URL, SINGUP_PAGE_URL } from "pages/Pages.consts";
 import { useAppSelector } from "hooks/redux-hooks";
 import { parceAuthFormError } from "./AuthForm.helpers";
 import { useDispatch } from 'react-redux';
-import { resetAuthStatus } from 'store/slices/userSlice';
 
 interface AuthFormProps {
   formType: AuthFormType;
@@ -44,7 +43,6 @@ export const AuthForm: FC<AuthFormProps> = ({
   handleGitHubLogin,
   handleGoogleLogin,
 }) => {
-  const dispatch = useDispatch();
   const messages =
     formType === AuthFormType.LOGIN ? signInMessages : signUpMessages;
   const redirectUrl =

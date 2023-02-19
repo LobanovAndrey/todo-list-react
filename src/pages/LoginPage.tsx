@@ -26,6 +26,7 @@ export const LoginPage = () => {
       dispatch(setAuthPending());
       userCredential
         .then(({ user }) => {
+          console.log(user);
           dispatch(
             setUser({
               email: user.email!,
@@ -37,6 +38,7 @@ export const LoginPage = () => {
           });
         })
         .catch((error: FirebaseError) => {
+          console.error(error);
           dispatch(setAuthError(error.code));
         });
     },

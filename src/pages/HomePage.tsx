@@ -4,6 +4,7 @@ import {
   Panel,
   PanelHeader,
   Separator,
+  Spacing,
   SplitCol,
   SplitLayout,
   View,
@@ -48,6 +49,7 @@ export const HomePage = () => {
           <Panel id="home-page">
             <HomeHeader user={user.email} handleLogout={handleLogout} />
               <Panel centered id="home-page-content">
+                <Spacing size={15} />
                 <TodoCreationPanel />
                 <TodoList />
               </Panel>

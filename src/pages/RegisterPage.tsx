@@ -29,6 +29,7 @@ export const RegisterPage = () => {
           dispatch(resetAuthStatus());
         })
         .catch((error: FirebaseError) => {
+          console.error(error);
           dispatch(setAuthError(error.code));
         });
     },

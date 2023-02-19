@@ -1,21 +1,40 @@
+:root {
+  --height-timeout: .8s;
+  --opacity-timeout: 0.5s;
+  --transform-timeout: 1s;
+  --perspective-timeout: 1s;
+  --list-item-max-height: 100vh;
+}
+
 .todo-item-enter {
+  max-height: 0;
   opacity: 0;
-  transform: translateY(-300px) scale(1.3);
+  transform: rotateX(-90deg);
 }
 
 .todo-item-enter-active {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  transition: all 0.7s ease-out;
+  max-height: var(--list-item-max-height);
+  transform: perspective(300px);
+
+  transition: 
+    max-height var(--height-timeout) ease-in-out, 
+    opacity var(--opacity-timeout) ease-in,
+    transform var(--transform-timeout) cubic-bezier(.36,-0.64,.34,1.76);
 }
 
 .todo-item-exit {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  max-height: var(--list-item-max-height);
 }
 
 .todo-item-exit-active {
   opacity: 0;
-  transform: translateX(-300px) scale(0.7);
-  transition: all 0.5s ease;
+  max-height: 0;
+  transform: scale(0.5);
+
+  transition: 
+    max-height var(--height-timeout) ease-out, 
+    opacity var(--opacity-timeout) ease-in,
+    transform var(--transform-timeout) cubic-bezier(.36,-0.64,.34,1.76);
 }
